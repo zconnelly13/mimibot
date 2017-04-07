@@ -54,4 +54,22 @@ source venv/bin/activate
 
 # install dependencies
 pip install -r requirements.txt
+
+# you'll need some environment variables
+# ask another contributor to this repo to get them to you
+
+# create a .env file
+touch .env
+
+# and then put the secrets in that file -- it should look something like...
+export MIMI_BOT_TOKEN="xxX-some-secret-Xxx"
+export MIMI_BOT_ID="S0P3RS3CRE7"
+
+# source it
+source .env
+```
+
+### Running Tests
+```bash
+make test
 ```
