@@ -2,6 +2,6 @@ import os
 
 test = os.environ.get("MIMIBOT_TEST")
 if test:
-    DB_PATH = './.test.db'
+    DB_PATH = '/.test.db'
 else:
-    DB_PATH = './db/pickle.db'
+    DB_PATH = '/db/pickle.db'
