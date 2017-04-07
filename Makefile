@@ -7,3 +7,6 @@ test:
 
 db:
 	mkdir -p db 
+
+lint:
+	flake8 src/ tests/

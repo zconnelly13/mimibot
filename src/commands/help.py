@@ -11,7 +11,7 @@ class Help(object):
             cmd_help_texts = [self.format_help_text(cmd)
                               for cmd in COMMANDS if cmd.command != "help"]
             cmd_help_text = "\n".join(cmd_help_texts)
-            intro_help_text = "Here is a list of commands -- for usage instructions try 'help <command>'"  # nopep8
+            intro_help_text = "Here is a list of commands -- for usage instructions try 'help <command>'"  # noqa
             return intro_help_text + "\n\n" + cmd_help_text
         elif command.startswith(self.command):
             query_command = command.split(" ")[1]
