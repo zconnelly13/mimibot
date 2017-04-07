@@ -67,6 +67,9 @@ export MIMI_BOT_ID="S0P3RS3CRE7"
 
 # source it
 source .env
+
+# initialize the db
+make db
 ```
 
 ### Running Tests
