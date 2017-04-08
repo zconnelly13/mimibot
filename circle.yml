@@ -1,0 +1,5 @@
+test:
+  pre:
+    - make lint
+  override:
+    - make test
