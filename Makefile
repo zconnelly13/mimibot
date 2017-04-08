@@ -2,7 +2,7 @@ run:
 	PYTHONPATH='..' python src/main.py
 
 test:
-	rm .test.db
+	rm -f .test.db
 	MIMIBOT_TEST=1 PYTHONPATH='..' nosetests --nocapture
 
 db:
