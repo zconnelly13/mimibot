@@ -5,7 +5,5 @@ class Add(object):
         self.usage = "add 4 5"
 
     def get_response(self, command, channel):
-        if not command.startswith(self.command):
-            return None
-        else:
+        if command.startswith(self.command):
             return sum(map(int, command.split(" ")[1:]))
