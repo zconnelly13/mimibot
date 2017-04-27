@@ -30,7 +30,7 @@ class TestPing(TestCase):
         self.ping_command = Ping()
 
     def test_responds_with_pong(self):
-        response = self.ping_command.get_response("ping", "channel_foo")
+        response = self.ping_command.get_response("ping")
         self.assertEqual(response, "pong")
 ```
 
@@ -45,10 +45,9 @@ bits are as follows.
 # (we'll see more of this in a bit)
 self.ping_command = Ping()
 
-# It should implement a method called `get_response` that takes two arguments
-# the first is the command text (what the user wrote after "@mimibot") and
-# the second is the channel where it happened
-response = self.ping_command.get_response("ping", "channel_foo")
+# It should implement a method called `get_response` that takes one argument
+# and two kwargs (user and channel)
+response = self.ping_command.get_response("ping")
 ```
 
 Things will make a bit more sense in a moment.
@@ -62,7 +61,7 @@ class Ping(object):
         self.help_text = "responds with 'pong'"
         self.usage = "ping"
 
-    def get_response(self, command, channel):
+    def get_response(self, command, user=None, channel=None):
         if command.startswith(self.command):
             return "pong"
 ```
@@ -85,7 +84,7 @@ self.usage = "ping"
     
 # finally `get_response` contains all the logic for deciding
 # how the bot will respond.
-def get_response(self, command, channel):
+def get_response(self, command, user=None, channel=None):
     if command.startswith(self.command):
         return "pong"
 ```
