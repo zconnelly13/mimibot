@@ -9,13 +9,13 @@ class TestHelp(TestCase):
 
     def test_runs_default(self):
         try:
-            self.help_command.get_response("help", "channelfoo")
+            self.help_command.get_response("help")
         except Exception as e:
             self.fail(
                 "Exception thrown trying to generate help text: %s" % str(e))
 
     def test_help_usage(self):
-        response = self.help_command.get_response("help help", "foo")
+        response = self.help_command.get_response("help help")
         self.assertEqual(
             response,
             "*Usage:* @mimibot help or @mimibot help <command>")

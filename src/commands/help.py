@@ -4,7 +4,7 @@ class Help(object):
         self.help_text = "display help text"
         self.usage = "@mimibot help or @mimibot help <command>"
 
-    def get_response(self, command, channel):
+    def get_response(self, command, user=None, channel=None):
         # avoid circular imports
         from mimibot.src.registry import COMMANDS
         if command == self.command:

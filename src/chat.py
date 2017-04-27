@@ -6,7 +6,7 @@ def handle_message(message):
     Sees if the message provokes any responses from the bot.
     """
     responses = [response for response in
-                 [command.get_response(message, "channel_foo") for
+                 [command.get_response(message, "user_foo", "channel_foo") for
                   command in COMMANDS]
                  if response]
     for response in responses:

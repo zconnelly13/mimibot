@@ -8,7 +8,7 @@ class Get(object):
         self.usage = "get foo"
         self.db = db
 
-    def get_response(self, command, channel):
+    def get_response(self, command, user=None, channel=None):
         if command.startswith(self.command):
             key = command.split(" ")[1]
             val = db.get(key)

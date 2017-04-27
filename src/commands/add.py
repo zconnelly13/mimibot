@@ -4,6 +4,6 @@ class Add(object):
         self.help_text = "adds one or more number(s) together"
         self.usage = "add 4 5"
 
-    def get_response(self, command, channel):
+    def get_response(self, command, user=None, channel=None):
         if command.startswith(self.command):
             return sum(map(int, command.split(" ")[1:]))

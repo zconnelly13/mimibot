@@ -9,5 +9,5 @@ class TestSet(TestCase):
         self.set_command = Set()
 
     def test_sets_a_value(self):
-        self.set_command.get_response("set foo bar", "_")
+        self.set_command.get_response("set foo bar")
         self.assertEqual(db.get("foo"), "bar")

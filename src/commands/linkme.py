@@ -10,7 +10,7 @@ class Linkme(object):
             ("Hockey", "https://hockeyapp.net/"),
         ]
 
-    def get_response(self, command, channel):
+    def get_response(self, command, user=None, channel=None):
         if command.startswith(self.command):
             return self.format_links(self.links)
 

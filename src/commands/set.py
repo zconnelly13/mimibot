@@ -8,7 +8,7 @@ class Set(object):
         self.usage = "set foo bar"
         self.db = db
 
-    def get_response(self, command, channel):
+    def get_response(self, command, user=None, channel=None):
         if command.startswith(self.command):
             (key, val) = command.split(" ")[1:]
             db.set(key, val)
