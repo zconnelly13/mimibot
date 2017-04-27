@@ -8,16 +8,16 @@ class TestAdd(TestCase):
         self.add_command = Add()
 
     def test_adds_two_numbers(self):
-        response = self.add_command.get_response("add 1 2", "channelfoo")
+        response = self.add_command.get_response("add 1 2")
         self.assertEqual(3, response)
 
     def test_adds_more_than_two_numbers(self):
-        response = self.add_command.get_response("add 1 2 3", "channelfoo")
+        response = self.add_command.get_response("add 1 2 3")
         self.assertEqual(6, response)
 
     def test_responds_only_to_add(self):
-        response = self.add_command.get_response("1 2", "channelfoo")
+        response = self.add_command.get_response("1 2")
         self.assertIsNone(response)
 
-        response = self.add_command.get_response("subtract 1 2", "channelfoo")
+        response = self.add_command.get_response("subtract 1 2")
         self.assertIsNone(response)

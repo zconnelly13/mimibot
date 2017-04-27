@@ -8,7 +8,7 @@ class TestLinkme(TestCase):
         self.linkme_command = Linkme()
 
     def test_responds(self):
-        response = self.linkme_command.get_response("linkme", "_")
+        response = self.linkme_command.get_response("linkme")
         self.assertIsNotNone(response)
 
     def test_format_list_of_links(self):

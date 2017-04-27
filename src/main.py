@@ -15,14 +15,14 @@ AT_BOT = "<@" + MIMI_BOT_ID + ">"
 slack_client = SlackClient(os.environ.get('MIMI_BOT_TOKEN'))
 
 
-def handle_message(message, channel):
+def handle_message(message, user, channel):
     """
     Receives commands directed at the bot and determines if they
     are valid commands. If so, then acts on the commands. If not,
     returns back what it needs for clarification.
     """
     responses = [response for response in
-                 [command.get_response(message, channel) for
+                 [command.get_response(message, user=user, channel=channel) for
                   command in COMMANDS]
                  if response]
     for response in responses:
@@ -45,19 +45,20 @@ def parse_slack_output(slack_rtm_output):
             if output and 'text' in output and AT_BOT in output['text']:
                 # return text after the @ mention, whitespace removed
                 return output['text'].split(AT_BOT)[1].strip().lower(), \
-                       output['channel']
-    return None, None
+                       output['user'], output['channel']
+    return None, None, None
 
 
 if __name__ == "__main__":
     READ_WEBSOCKET_DELAY = 1  # 1 second delay between reading from firehose
     if slack_client.rtm_connect():
-        print("StarterBot connected and running!")
+        print("MimiBot connected and running!")
         while True:
             try:
-                command, channel = parse_slack_output(slack_client.rtm_read())
+                slack_read = slack_client.rtm_read()
+                command, user, channel = parse_slack_output(slack_read)
                 if command and channel:
-                    handle_message(command, channel)
+                    handle_message(command, user, channel)
             except Exception as e:
                 slack_client.api_call(
                     "chat.postMessage",
