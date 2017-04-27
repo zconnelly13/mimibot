@@ -111,6 +111,23 @@ COMMANDS = [
 ]
 ```
 
+### Make Chat
+
+You can test your changes locally by running `make chat`
+
+```bash
+zac@macbook ~/personal_projects/mimibot $ make chat
+PYTHONPATH='..' python src/chat.py
+Chat with mimibot below
+
+@mimibot ping
+pong
+
+@mimibot 
+```
+
+Looks good to me
+
 ### You're Done! (sort of)
 
 Now you have a working command -- great! Make a PR.
