@@ -6,7 +6,6 @@ class Linkme(object):
         self.links = [
             ("Asana", "https://app.asana.com/"),
             ("Jira", "https://gomimi.atlassian.net/"),
-            ("Web Hearing Test", "https://mimihearingtechnologies.github.io/web-hearingtest/"),  # noqa
             ("Hockey", "https://hockeyapp.net/"),
         ]
 
