@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.13.0]
+    method: GET
+    uri: https://translation.googleapis.com/language/translate/v2?q=two&source=en&target=de
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAC/6vmUlBQSkksSVSyUqgGsoG8kqLEvOKcxJLM/LxioGg0WFQBKouiIjUlJLWiBKhG
+        qao8NVMJqqAWTMdygVi1XADR2atrYQAAAA==
+    headers:
+      alt-svc: ['quic=":443"; ma=2592000; v="37,36,35"']
+      cache-control: [private]
+      content-encoding: [gzip]
+      content-type: [application/json; charset=UTF-8]
+      date: ['Tue, 02 May 2017 14:28:16 GMT']
+      server: [ESF]
+      vary: [Origin, X-Origin, Referer]
+      x-content-type-options: [nosniff]
+      x-frame-options: [SAMEORIGIN]
+      x-xss-protection: [1; mode=block]
+    status: {code: 200, message: OK}
+version: 1
