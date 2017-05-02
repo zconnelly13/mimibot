@@ -2,7 +2,7 @@ run:
 	PYTHONPATH='..' python src/main.py
 
 chat:
-	PYTHONPATH='..' python src/chat.py
+	PYTHONIOENCODING=utf-8 PYTHONPATH='..' python src/chat.py
 
 test:
 	rm -f .test.db
