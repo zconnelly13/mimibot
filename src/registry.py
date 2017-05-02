@@ -4,6 +4,7 @@ from mimibot.src.commands.help import Help
 from mimibot.src.commands.linkme import Linkme
 from mimibot.src.commands.set import Set
 from mimibot.src.commands.translate import Translate
+from mimibot.src.commands.ubersetzen import Ubersetzen
 
 COMMANDS = [
     Add(),
@@ -12,4 +13,5 @@ COMMANDS = [
     Linkme(),
     Set(),
     Translate(),
+    Ubersetzen(),
 ]
